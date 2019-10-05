@@ -13,10 +13,10 @@ public class InputManager : MonoBehaviour
    }
 
    public bool GetA(int num) {
-       return Input.GetButtonDown("Abutton_" + num);
+       return Input.GetButtonUp("Abutton_" + num);
    }
 
    public bool GetB(int num) {
-       return Input.GetButtonDown("Bbutton_" + num);
+       return Input.GetButtonUp("Bbutton_" + num);
    }
 }
