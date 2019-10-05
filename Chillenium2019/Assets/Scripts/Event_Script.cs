@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 
 //enums for the different events
-public enum Job { L1Off, L1On, L2Off, L2On, L1P1, L1P2, L2P1, L2P2, MainLightL, MainLightC, MainLightR };//, Fireworks };
+public enum Job { L1Off, L1On, L2Off, L2On, L1P1, L1P2, L2P1, L2P2, MainLightL, MainLightC, MainLightR, Fireworks };
 
 //The general Event Handler
 public class Event_Script : MonoBehaviour{
