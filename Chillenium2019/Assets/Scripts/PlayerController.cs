@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   public float playerSpeed = 10; //speed player moves
-   private Rigidbody2D rb;
+    public int playerNumber;
+    public float playerSpeed = 10; //speed player moves
+    private Rigidbody2D rb;
+    private InputManager inputManager;
 
-   private void Awake()
-   {
-       rb = GetComponent<Rigidbody2D>();
-   }
-   
-   private void Update () 
-   {
-   
-       Move(); // Player Movement 
-   }
-   
-   void Move()
-   {
-       float horizontal = Input.GetAxis("Horizontal");
-       float vertical = Input.GetAxis("Vertical");
-       rb.velocity = new Vector2(horizontal * playerSpeed, vertical * playerSpeed);
-   }
+    private void Awake() {
+        rb = GetComponent<Rigidbody2D>();
+        inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
+    }
+    
+    private void Update () {
+        Move(); // Player Movement 
+        Buttons(); // Player Input
+    }
+    
+    void Move() {
+        float horizontal = inputManager.GetHoriz(playerNumber);
+        float vertical = inputManager.GetVert(playerNumber);
+
+        this.transform.position += new Vector3(horizontal, vertical, 0) * playerSpeed;
+    }
+
+    void Buttons() {
+        // A button input
+        if (inputManager.GetA(playerNumber)) {
+            Debug.Log("player "+ playerNumber +" pressed A\n");
+        }
+        // B button input
+        if (inputManager.GetB(playerNumber)) {
+            Debug.Log("player "+ playerNumber +" pressed B\n");
+        }
+    }
 }
