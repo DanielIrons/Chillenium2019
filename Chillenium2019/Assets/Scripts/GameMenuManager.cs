@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class GameMenuManager : MonoBehaviour
 
     public Transform[] characterNodes;
     public GameObject[] playerArrows;
+    public Image[] playerImgs;
+    public Color notSelectedColor;
+    public Color selectedColor;
+    public Color[] readyColor;
     public float arrowSpeed;
     public float playerDelay;
 
@@ -43,6 +48,11 @@ public class GameMenuManager : MonoBehaviour
         // deactivate all player arrows
         for (int i = 0; i < 4; i++) {
             playerArrows[i].SetActive(false);
+        }
+
+        // set player icon to dark
+        for (int i = 0; i < 4; i++) {
+            playerImgs[i].color = notSelectedColor;
         }
     }
 
@@ -115,17 +125,19 @@ public class GameMenuManager : MonoBehaviour
         int character = ReturnNextAvailableCharacter();
         playerCurrChar[num] = character;
         playerArrows[num].transform.position = characterNodes[character].position;
+        playerImgs[playerCurrChar[num]].color = selectedColor;
         playerArrows[num].SetActive(true);
     }
 
     void DisconnectPlayer(int num) {
         playerConnected[num] = false;
+        playerImgs[playerCurrChar[num]].color = notSelectedColor;
         playerArrows[num].SetActive(false);
 
     }
 
     void MovePlayerArrow(float input, int num) {
-        //Debug.Log("test");
+        playerImgs[playerCurrChar[num]].color = notSelectedColor;
         // left
         int x = playerCurrChar[num];
         if (input < 0) {
@@ -147,11 +159,13 @@ public class GameMenuManager : MonoBehaviour
         }
 
         playerCurrChar[num] = x;
+        playerImgs[playerCurrChar[num]].color = selectedColor;
     }
 
     void ReadyPlayer(int num) {
         playerReady[num] = true;
         playerArrows[num].SetActive(false);
+        playerImgs[playerCurrChar[num]].color = readyColor[playerCurrChar[num]];
         if (characterPicked[playerCurrChar[num]] == false)
             characterPicked[playerCurrChar[num]] = true;
     }
@@ -159,6 +173,7 @@ public class GameMenuManager : MonoBehaviour
     void UnreadyPlayer(int num) {
         playerReady[num] = false;
         playerArrows[num].SetActive(true);
+        playerImgs[playerCurrChar[num]].color = selectedColor;
         characterPicked[playerCurrChar[num]] = false;
      }    
 }
