@@ -24,12 +24,14 @@ public class AddToList : MonoBehaviour
     {
         KILL = false;
         getNext = false;
+        lifeOf = new System.Timers.Timer(2000 * 1000);
     }
 
     void TimerStart() {
         //Set to spawn events every 5 seconds
         lifeOf.Stop();
-        lifeOf = new System.Timers.Timer(2 * 1000);
+        lifeOf.Close();
+        lifeOf = new System.Timers.Timer(25 * 100);
 
         lifeOf.Elapsed += OnTimedEvent;
         lifeOf.AutoReset = false;
