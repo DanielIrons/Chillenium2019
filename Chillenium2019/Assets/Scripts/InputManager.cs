@@ -19,4 +19,8 @@ public class InputManager : MonoBehaviour
    public bool GetB(int num) {
        return Input.GetButtonUp("Bbutton_" + num);
    }
+
+   public bool GetStart(int num) {
+       return Input.GetButtonUp("Sbutton_" + num);
+   }
 }
