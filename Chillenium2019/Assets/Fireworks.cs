@@ -8,7 +8,7 @@ using System.Diagnostics;
 public class Fireworks : MonoBehaviour
 {
     [Range(1, 2)]
-    public int fireworkID;
+    public int FireOrSmoke;
 
     //Timer for how long fireworks go off for
     private System.Timers.Timer spawnTimer;
@@ -37,11 +37,25 @@ public class Fireworks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<ParticleSystem>().isPlaying) {
-            Event_Script.jobDone((int)Job.Fireworks);
+        if(FireOrSmoke == 1) {
+            if (GetComponent<ParticleSystem>().isPlaying) {
+                Event_Script.jobDone((int)Job.Fireworks);
+            }
+            if (!boom && GetComponent<ParticleSystem>().isPlaying) {
+                GetComponent<ParticleSystem>().Stop();
+            }
         }
-        if(!boom && GetComponent<ParticleSystem>().isPlaying) {
-            GetComponent<ParticleSystem>().Stop();
+        else {
+            if (GetComponent<ParticleSystem>().isPlaying) {
+                Event_Script.jobDone((int)Job.FogOn);
+            }
+            if (!boom && GetComponent<ParticleSystem>().isPlaying) {
+                GetComponent<ParticleSystem>().Stop();
+
+            }
+            if (!boom) {
+                Event_Script.jobDone((int)Job.FogOff);
+            }
         }
     }
 }
