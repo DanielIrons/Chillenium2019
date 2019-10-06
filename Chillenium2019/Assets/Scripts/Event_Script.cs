@@ -88,6 +88,11 @@ public class Event_Script : MonoBehaviour{
             jobsLeft++;
         }
     }
+
+    private void onDestroy() {
+        spawnTimer.Stop();
+        spawnTimer.Close();
+    }
 }
 
 // Handles the things that the player needs to do before the time runs out
