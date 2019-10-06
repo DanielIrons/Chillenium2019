@@ -1475,7 +1475,7 @@ MonoBehaviour:
   - {fileID: 6363292175534721489, guid: c9aa6deb28fb9f84991f276a18d64470, type: 3}
   - {fileID: 1442004195637886314, guid: 1fbe43af03ea25d4baa5edc083f55f4e, type: 3}
   playerParent: {fileID: 2026560495}
-  DeveloperVersion: 1
+  DeveloperVersion: 0
   startTimer: 120
   timerText: {fileID: 1378152405}
 --- !u!1 &357799353
@@ -3164,12 +3164,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5269088213799133583, guid: 218b28d268dc76747a0716340b9adaf5,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 816fa03bebb29f54fa3a25e40f139c90,
-        type: 3}
     - target: {fileID: 2792222745326676893, guid: 218b28d268dc76747a0716340b9adaf5,
         type: 3}
       propertyPath: spotID
@@ -3180,6 +3174,12 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5269088213799133583, guid: 218b28d268dc76747a0716340b9adaf5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 816fa03bebb29f54fa3a25e40f139c90,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218b28d268dc76747a0716340b9adaf5, type: 3}
 --- !u!1001 &920149663
