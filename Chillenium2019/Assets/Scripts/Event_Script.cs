@@ -54,6 +54,10 @@ public class Event_Script : MonoBehaviour{
     {
         TimeSpawn = difficulty;
         TimerStart();
+        eventList = new List<Game_Event>();
+        jobsLeft = 0;
+        jobsDone = 0;
+        jobsDrain = 0;
     }
 
     // Update is called once per frame
@@ -83,6 +87,11 @@ public class Event_Script : MonoBehaviour{
             Event_Script.eventList.Add(new Game_Event());
             jobsLeft++;
         }
+    }
+
+    private void OnDestroy() {
+        spawnTimer.Stop();
+        spawnTimer.Close();
     }
 }
 
