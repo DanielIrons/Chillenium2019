@@ -13,7 +13,7 @@ public class GameEngine : MonoBehaviour
         if (DeveloperVersion) {
             for (int i = 0; i < 4; i++) {
             GameObject player = Instantiate(playerPrefabs[i], 
-                                            transform.position, 
+                                            playerParent.transform.position, 
                                             Quaternion.identity, 
                                             playerParent);
             player.GetComponent<PlayerController>().SetPlayerNum(i + 1); 
@@ -22,7 +22,7 @@ public class GameEngine : MonoBehaviour
         else {
             for (int i = 0; i < 4; i++) {
                         GameObject player = Instantiate(playerPrefabs[gm.GetPlayerChar(i)], 
-                                                        transform.position, 
+                                                        playerParent.transform.position, 
                                                         Quaternion.identity, 
                                                         playerParent);
                         player.GetComponent<PlayerController>().SetPlayerNum(i + 1); 
