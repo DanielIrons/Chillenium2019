@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     //Keeps track of button presses
     private bool[] buttons = {false, false};
     private GameObject consist;
+    // bool that disables player movement
+    private bool isDisabled = false;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -30,8 +32,10 @@ public class PlayerController : MonoBehaviour
     }
     
     private void Update () {
-        Move(); // Player Movement 
-        Buttons(); // Player Input
+        if (!isDisabled) {
+            Move(); // Player Movement 
+            Buttons(); // Player Input
+        }
     }
     
     void Move() {
@@ -139,5 +143,13 @@ public class PlayerController : MonoBehaviour
         if((cur.GetComponent<Proj_Button>() != null && buttons[0])) {
             cur.GetComponent<Proj_Button>().use();
         }
+    }
+
+    public void DisablePlayer() {
+        isDisabled = true;
+    }
+
+    public void ReEnablePlayer() {
+        isDisabled = false;
     }
 }
