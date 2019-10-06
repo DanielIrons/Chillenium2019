@@ -19,12 +19,14 @@ public class Fireworks : MonoBehaviour
         boom = false;
     }
 
-    void BlastStart() {
+    public void BlastStart() {
         //Set to spawn events every 5 seconds
-        spawnTimer = new System.Timers.Timer(1 * 1000);
-        spawnTimer.Elapsed += OnTimedEvent;
-        spawnTimer.AutoReset = false;
-        spawnTimer.Enabled = true;
+        if(FireOrSmoke == 1){
+            spawnTimer = new System.Timers.Timer(1 * 1000);
+            spawnTimer.Elapsed += OnTimedEvent;
+            spawnTimer.AutoReset = false;
+            spawnTimer.Enabled = true;            
+        }
         GetComponent<ParticleSystem>().Play();
         boom = true;
     }

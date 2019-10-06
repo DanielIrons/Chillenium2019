@@ -92,6 +92,12 @@ public class Light_Toggle : MonoBehaviour {
         rotate(0.0f);
     }
 
+    public void warp(Vector3 pos){
+        transform.position = pos;
+        centerAngle = (Mathf.Atan2(transform.position.y, transform.position.x) * 180 / Mathf.PI) - 90;
+        rotate(0.0f);
+    }
+
     public void toggle() {
         on = !on;
 

@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     private movement lastMove;
     private bool isIdle = false;
     private bool isMove = false;
+    //Checks if the player is using an interactive
+    private bool isActing = false;
+    //Keeps track of button presses
+    private bool[] buttons = {false, false};
+    private GameObject consist;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -42,8 +47,21 @@ public class PlayerController : MonoBehaviour
         }
 
         //HandleAnimations(horizontal, vertical);
-
-        this.transform.position += new Vector3(horizontal, vertical, 0) * playerSpeed;
+        if(isActing && consist.GetComponent<MainSpotlight>() != null){
+            consist.GetComponent<MainSpotlight>().rotate(horizontal);
+            
+        }
+        else{
+            this.transform.position += new Vector3(horizontal, vertical, 0) * playerSpeed;
+            
+            if(isActing && consist.GetComponent<Light_Toggle>()!=null){
+                consist.GetComponent<Light_Toggle>().warp(this.transform.position);
+            }
+        }
+        if(buttons[1] == true){
+                isActing = false;
+                consist = null;
+            }
     }
 
     void HandleAnimations(float h, float v) {
@@ -77,10 +95,18 @@ public class PlayerController : MonoBehaviour
         // A button input
         if (inputManager.GetA(playerNumber)) {
             Debug.Log("player "+ playerNumber +" pressed A\n");
+            buttons[0] = true;
+        }else
+        {
+            buttons[0] = false;
         }
         // B button input
         if (inputManager.GetB(playerNumber)) {
             Debug.Log("player "+ playerNumber +" pressed B\n");
+            buttons[1] = true;
+        }else
+        {
+            buttons[1] = false;
         }
     }
 
@@ -91,5 +117,21 @@ public class PlayerController : MonoBehaviour
 
     public void SetPlayerNum(int num) {
         playerNumber = num;
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if(isActing) return;
+        GameObject cur = col.gameObject;
+        if(cur.GetComponent<Fireworks>() != null && buttons[0]){
+            cur.GetComponent<Fireworks>().BlastStart();
+        }
+        if(cur.GetComponent<TermScript>() != null && buttons[0]){
+            cur.GetComponent<TermScript>().updateJobs();
+        }
+        if((cur.GetComponent<MainSpotlight>() != null ||  cur.GetComponent<Light_Toggle>() != null) && buttons[0]){
+            isActing = true;
+            consist = cur;
+        }
     }
 }

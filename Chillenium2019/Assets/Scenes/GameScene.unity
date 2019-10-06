@@ -290,6 +290,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &95794029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2818452466233186006, guid: 7cfa06d9e1b3f5d42b1200eeac01a1b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 920149663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &165914007
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +574,7 @@ MonoBehaviour:
   - {fileID: 6363292175534721489, guid: c9aa6deb28fb9f84991f276a18d64470, type: 3}
   - {fileID: 1442004195637886314, guid: 1fbe43af03ea25d4baa5edc083f55f4e, type: 3}
   playerParent: {fileID: 2026560495}
+  DeveloperVersion: 1
 --- !u!1 &357799353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,12 +1248,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &805080151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2818452466094759283, guid: 7cfa06d9e1b3f5d42b1200eeac01a1b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 920149663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &856837183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,6 +2643,7 @@ GameObject:
   - component: {fileID: 1759710178}
   - component: {fileID: 1759710180}
   - component: {fileID: 1759710179}
+  - component: {fileID: 1759710181}
   m_Layer: 0
   m_Name: Terminal
   m_TagString: Untagged
@@ -2734,12 +2736,38 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.035117015, y: -0.3232313}
   m_Size: {x: 1.772594, y: 2.1190968}
   m_Direction: 0
+--- !u!61 &1759710181
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759710176}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.375}
+    newSize: {x: 1, y: 1.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.375}
+  m_EdgeRadius: 0
 --- !u!1 &1808262579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,7 +2875,7 @@ PrefabInstance:
         type: 3}
       propertyPath: content
       value: 
-      objectReference: {fileID: 805080151}
+      objectReference: {fileID: 95794029}
     - target: {fileID: 8758040309460654718, guid: a7b77aeda7b014f4e922ac2f379de938,
         type: 3}
       propertyPath: template
