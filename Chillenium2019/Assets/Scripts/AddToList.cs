@@ -38,8 +38,8 @@ public class AddToList : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    static void showNew()
+    // Called from the outside telling us to update the list
+    public static void showNew()
     {
         getNext = true;
     }

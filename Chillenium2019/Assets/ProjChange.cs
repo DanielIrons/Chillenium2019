@@ -14,7 +14,6 @@ public class ProjChange : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) swap();
         Event_Script.jobDone((int)Job.Proj1 + curState);
     }
 
