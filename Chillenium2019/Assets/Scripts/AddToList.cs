@@ -1,4 +1,7 @@
 ﻿using System.Collections;
+using System;
+using System.Timers;
+using System.Diagnostics;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +12,8 @@ public class AddToList : MonoBehaviour
     public GameObject template;
     public GameObject content;
     private static bool getNext;
+    private System.Timers.Timer lifeOf;
+    private static bool KILL;
 
     public void add_Click() {
         var copy = Instantiate(template);
@@ -17,16 +22,38 @@ public class AddToList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        KILL = false;
         getNext = false;
+    }
+
+    void TimerStart() {
+        //Set to spawn events every 5 seconds
+        lifeOf.Stop();
+        lifeOf = new System.Timers.Timer(2 * 1000);
+
+        lifeOf.Elapsed += OnTimedEvent;
+        lifeOf.AutoReset = false;
+        lifeOf.Enabled = true;
+    }
+
+    void clear() {
+        foreach (Transform child in content.transform) {
+            Destroy(child.gameObject);
+        }
+        KILL = false;
+    }
+
+    private static void OnTimedEvent(object source, ElapsedEventArgs e) {
+        //UnityEngine.Debug.Log("SPAWN: EVENT");
+        KILL = true;
     }
 
     void Update() {
         if (getNext) {
+            TimerStart();
             if (Event_Script.moreJobs()) {
                 List<Event_Brief> toAdd = Event_Script.jobsBrief();
-                foreach (Transform child in content.transform) {
-                    Destroy(child.gameObject);
-                }
+                clear();
                 foreach (Event_Brief ev in toAdd) {
                     UnityEngine.Debug.Log(ev.getType());
                     GameObject cur = Instantiate(template);
@@ -34,28 +61,28 @@ public class AddToList : MonoBehaviour
                     string message = "";
                     switch (ev.getType()) {
                         case 0:
-                            message = "Light 1: Off";
+                            message = "Green Light: Off";
                             break;
                         case 1:
-                            message = "Light 1: On";
+                            message = "Green Light: On";
                             break;
                         case 2:
-                            message = "Light 2: Off";
+                            message = "Pink Light: Off";
                             break;
                         case 3:
-                            message = "Light 2: On";
+                            message = "Pink Light: On";
                             break;
                         case 4:
-                            message = "Light 1: Red";
+                            message = "Green Light: Red";
                             break;
                         case 5:
-                            message = "Light 1: Blue";
+                            message = "Green Light: Blue";
                             break;
                         case 6:
-                            message = "Light 2: Red";
+                            message = "Pink Light: Red";
                             break;
                         case 7:
-                            message = "Light 2: Blue";
+                            message = "Pink Light: Blue";
                             break;
                         case 8:
                             message = "Big Spotlight: Left";
@@ -93,6 +120,9 @@ public class AddToList : MonoBehaviour
                 }
             }
             getNext = !getNext;
+        }
+        else if (KILL) {
+            clear();
         }
     }
 
