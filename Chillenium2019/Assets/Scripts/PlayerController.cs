@@ -82,7 +82,23 @@ public class PlayerController : MonoBehaviour
             else if (lastMove == movement.north) {
                 animator.Play("idle.north");
             }
-
+            else if (lastMove == movement.south) {
+                animator.Play("idle-south");
+            }
+        }
+        else {
+            if (v > 0 && !isMove) {
+                animator.Play("walk-north");
+                isIdle= false;
+            }
+            else if (v < 0) {
+                animator.Play("walk-south");
+                isIdle= false;
+            }
+            else if (h > 0 || h < 0) {
+                animator.Play("walk-side");
+                isIdle= false;
+            }
         }
     }
 
