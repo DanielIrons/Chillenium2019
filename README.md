@@ -32,11 +32,11 @@ The name of the game is to stay on top of the work, you have to complete tasks g
 -Smoke Machine:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/SmokeMachine.png)
        Interact (**Press A**) to start and stop fogification
        
--Spotlights:[alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Spotlight.png)
+-Spotlights:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Spotlight.png)
        There are two types of spotlights.
               1. The big spotlight on the catwalk: when near, press a to attach, then left or right to rotate, and b to dettach
               2. The small spotlights on the ground: press a to pick up and toggle on or off, b to drop
               
--Projector:[alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Projector.png)
+-Projector:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Projector.png)
        Interact (**Press A**) to cycle through the stage backgrounds
        
