@@ -8,24 +8,19 @@ public class Glow : MonoBehaviour {
     void Start() {
         use = false;
 
+
+        MaterialPropertyBlock props = new MaterialPropertyBlock();
+        props.SetFloat("on",0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (use) {
-            Shader.SetGlobalFloat("on", 1.0f);
-        }
-        else {
-            Shader.SetGlobalFloat("on", 0.0f);
-        }
         use = false;
     }
     public void inRange() {
         use = true;
-    }
-    public void outRange(){
-        use = false;
+        props.SetFloat("on", 1.0f);
     }
 
     

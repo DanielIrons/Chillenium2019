@@ -4,6 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
+		 [PerRendererData]_on("on",Range(0,1)) = 0.0
 	}
 		SubShader
 		{
@@ -41,8 +42,7 @@
 
 				fixed4 _Color;
 				float4 _MainTex_TexelSize;
-
-				uniform int on;
+				float _on;
 
 				fixed4 fragF(v2f i) : COLOR {
 					half4 c = tex2D(_MainTex, i.uv);
@@ -57,7 +57,7 @@
 					fixed right = tex2D(_MainTex, i.uv - fixed2(_MainTex_TexelSize.x, 0)).a;
 
 
-					if (on <= 0.1) {
+					if (_on <= 0.1) {
 						return c;
 					}
 					else return lerp(outC, c, ceil(up * down * left * right));
