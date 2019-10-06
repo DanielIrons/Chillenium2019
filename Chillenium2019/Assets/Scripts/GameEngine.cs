@@ -10,6 +10,7 @@ public class GameEngine : MonoBehaviour
     private int pausedPlayer;
     private bool isPaused = false;
     public GameObject pauseMenu;
+    public GameObject EndMenu;
 
     private bool wait = false;
     private float waitTimer = 0;
@@ -28,6 +29,7 @@ public class GameEngine : MonoBehaviour
         GameObject.Find("MusicManager").GetComponent<MusicManager>().PlayCurrSong();
         currTime = startTimer;
         pauseMenu.SetActive(false);
+        EndMenu.SetActive(false);
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         if (DeveloperVersion) {
             for (int i = 0; i < 4; i++) {
@@ -52,7 +54,16 @@ public class GameEngine : MonoBehaviour
     void Update() {
         if(!isPaused && !wait) {
             currTime -= Time.deltaTime;
-            timerText.text = (int)(currTime / 60) + ":" + (int)(currTime % 60);
+            int sec = (int)(currTime % 60);
+            string sec_s = sec.ToString();
+            if (sec <= 9) {
+                sec_s = "0" + sec_s;
+            }
+            timerText.text = (int)(currTime / 60) + ":" + sec_s;
+
+            if (currTime <= 0) {
+                EndGame();
+            }
         } 
         else {
             if (inputManager.GetStart(pausedPlayer)) {
@@ -115,5 +126,10 @@ public class GameEngine : MonoBehaviour
     private void Delay() {
         wait = true;
         waitTimer = 0;
+    }
+
+    private void EndGame() {
+        DisableAllPlayers();
+        EndMenu.SetActive(true);
     }
 }
