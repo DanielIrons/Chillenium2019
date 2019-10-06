@@ -2094,7 +2094,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 0e7ae9ce490c8cae98c5417834f17698, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2786,12 +2786,14 @@ EdgeCollider2D:
   - {x: -0.46873903, y: -2.8758879}
   - {x: -2.3887076, y: -2.1789074}
   - {x: -2.482357, y: -1.418086}
-  - {x: -0.9953127, y: 0.029745102}
-  - {x: 2.4438746, y: 0.06491184}
-  - {x: 4.793847, y: 0.15211964}
-  - {x: 6.9517198, y: -0.19005585}
-  - {x: 8.033725, y: -0.03125906}
-  - {x: 10.790224, y: 0.06645298}
+  - {x: -0.83955383, y: -0.5154104}
+  - {x: 2.171297, y: -0.20766592}
+  - {x: 4.5602093, y: -0.23727703}
+  - {x: 5.561906, y: -0.4511366}
+  - {x: 6.912779, y: -0.4626336}
+  - {x: 7.627846, y: -0.44369125}
+  - {x: 7.955846, y: -0.22595787}
+  - {x: 10.595527, y: -0.24506474}
   - {x: 12.599052, y: -0.47268677}
   - {x: 13.506018, y: -1.3376551}
   - {x: 13.31955, y: -1.7484384}
@@ -2887,6 +2889,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5269088213799133583, guid: 218b28d268dc76747a0716340b9adaf5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 816fa03bebb29f54fa3a25e40f139c90,
+        type: 3}
     - target: {fileID: 2792222745326676893, guid: 218b28d268dc76747a0716340b9adaf5,
         type: 3}
       propertyPath: spotID
@@ -2897,12 +2905,6 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5269088213799133583, guid: 218b28d268dc76747a0716340b9adaf5,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 816fa03bebb29f54fa3a25e40f139c90,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218b28d268dc76747a0716340b9adaf5, type: 3}
 --- !u!1001 &920149663
@@ -4955,6 +4957,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5054885
+      objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.45056072
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 693eea008905b7247a96e1d17dc16c27, type: 3}
 --- !u!4 &1479097684 stripped
@@ -5885,6 +5902,21 @@ PrefabInstance:
         type: 3}
       propertyPath: lightID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.25698647
+      objectReference: {fileID: 0}
+    - target: {fileID: 576906382144454072, guid: 693eea008905b7247a96e1d17dc16c27,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5551005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 693eea008905b7247a96e1d17dc16c27, type: 3}
@@ -7639,8 +7671,9 @@ EdgeCollider2D:
   - {x: 12.913572, y: -2.7417397}
   - {x: 12.859916, y: -1.7930034}
   - {x: 11.990761, y: -0.32422364}
-  - {x: 11.454363, y: 0.8609425}
-  - {x: 9.984075, y: 0.8740171}
+  - {x: 11.064964, y: -0.26830828}
+  - {x: 9.789377, y: -0.33311355}
+  - {x: 9.742471, y: 0.7080884}
   - {x: 6.460763, y: 0.871477}
   - {x: 6.2417192, y: 0.7887354}
 --- !u!68 &2144488540
@@ -7847,6 +7880,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754125762903003087, guid: c1685616b6e7dc44a816f25dcc74ec9b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754125762903003087, guid: c1685616b6e7dc44a816f25dcc74ec9b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754125762903003087, guid: c1685616b6e7dc44a816f25dcc74ec9b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1685616b6e7dc44a816f25dcc74ec9b, type: 3}
