@@ -130,6 +130,7 @@ public class GameEngine : MonoBehaviour
 
     private void EndGame() {
         DisableAllPlayers();
+        isPaused = true;
         EndMenu.SetActive(true);
     }
 }
