@@ -50,7 +50,9 @@ public class PlayerController : MonoBehaviour
             Flip(false);
         }
 
-        //HandleAnimations(horizontal, vertical);
+        // player animations:
+        HandleAnimations(horizontal, vertical);
+
         if(isActing && consist.GetComponent<MainSpotlight>() != null){
             consist.GetComponent<MainSpotlight>().rotate(horizontal);
             
@@ -72,29 +74,15 @@ public class PlayerController : MonoBehaviour
     }
 
     void HandleAnimations(float h, float v) {
-     if (h == 0 && v == 0 && !isIdle) {
-           isIdle = true;
-           isMove = false;
-           if (lastMove == movement.side) {animator.Play("idle-side"); }
-           else if (lastMove == movement.north) { animator.Play("idle-north"); }
-           else if (lastMove == movement.south) { animator.Play("idle-south"); }
-       }
+        if (h == 0 || v == 0 && !isIdle) {
+            isIdle = true;
+            if (lastMove == movement.side) {
+                animator.Play("idle-side");
+            }
+            else if (lastMove == movement.north) {
+                animator.Play("idle.north");
+            }
 
-       else if (h != 0 || v != 0 && !isMove) {
-           isMove = true;
-           isIdle = false;
-           if (v > 0 && lastMove != movement.north || lastMove != movement.side) {
-                animator.Play("walk-north");
-                lastMove = movement.north;
-           }
-           else if (v < 0 && lastMove != movement.south || lastMove != movement.side) {
-                animator.Play("walk-south");
-                lastMove = movement.south;
-           }
-           else if (h != 0 && lastMove != movement.side) {
-                animator.Play("walk-side");
-                lastMove = movement.side;
-            }        
         }
     }
 

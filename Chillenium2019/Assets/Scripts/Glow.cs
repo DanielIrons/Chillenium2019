@@ -21,7 +21,18 @@ public class Glow : MonoBehaviour {
         }
         use = false;
     }
-    void inRange() {
+    public void inRange() {
         use = true;
+    }
+    public void outRange(){
+        use = false;
+    }
+
+    
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.GetComponent<PlayerController>() != null) {
+            inRange();
+        }
     }
 }
