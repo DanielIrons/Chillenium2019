@@ -20,6 +20,7 @@ public class Glow : MonoBehaviour {
     }
     public void inRange() {
         use = true;
+        props.SetFloat("on", 1.0f);
     }
 
     
