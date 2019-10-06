@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameScene.unity
     guid: 2c86a71074dfe3d48869946d2fe9d5b6
   - enabled: 1
+    path: Assets/Scenes/SongSel.unity
+    guid: 8212849840e55024b9ace3d6f08e0754
+  - enabled: 1
     path: Assets/Scenes/GameMenu.unity
     guid: f8fc85e326563984bac343bdedc1c3af
   m_configObjects: {}
