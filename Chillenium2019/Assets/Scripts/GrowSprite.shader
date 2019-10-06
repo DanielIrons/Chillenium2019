@@ -4,7 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_Color("Color", Color) = (1,1,1,1)
-		 [PerRendererData]_on("on",Range(0,1)) = 0.0
+		 [PerRendererData]_on("on",Float) = 0.0
 	}
 		SubShader
 		{

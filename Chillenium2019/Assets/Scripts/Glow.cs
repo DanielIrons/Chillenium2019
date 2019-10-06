@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Glow : MonoBehaviour {
     private bool use;
+    private MaterialPropertyBlock props;
+    private Renderer _renderer;
     // Start is called before the first frame update
     void Start() {
         use = false;
 
 
-        MaterialPropertyBlock props = new MaterialPropertyBlock();
+        props = new MaterialPropertyBlock();
         props.SetFloat("on",0.0f);
+        _renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         use = false;
+        _renderer.GetPropertyBlock(props);
+        props.SetFloat("on", 1.0f);
+        _renderer.SetPropertyBlock(props);
     }
     public void inRange() {
         use = true;
