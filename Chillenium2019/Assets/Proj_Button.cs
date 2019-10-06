@@ -15,9 +15,9 @@ public class Proj_Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     public void use() {
         projector.GetComponent<ProjChange>().swap();
     }
+
 }

@@ -144,4 +144,5 @@ public class Light_Toggle : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col) {
         curState = 0;
     }
+
 }
