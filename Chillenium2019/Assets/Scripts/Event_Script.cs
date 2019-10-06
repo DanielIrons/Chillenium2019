@@ -89,7 +89,7 @@ public class Event_Script : MonoBehaviour{
         }
     }
 
-    private void onDestroy() {
+    private void OnDestroy() {
         spawnTimer.Stop();
         spawnTimer.Close();
     }
