@@ -12,21 +12,28 @@ public class Glow : MonoBehaviour {
 
 
         props = new MaterialPropertyBlock();
-        props.SetFloat("on",0.0f);
+        props.SetFloat("_on",0.0f);
         _renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (use) {
+            _renderer.GetPropertyBlock(props);
+            props.SetFloat("_on", 1.0f);
+            _renderer.SetPropertyBlock(props);
+        }
+        else {
+            _renderer.GetPropertyBlock(props);
+            props.SetFloat("_on", 0.0f);
+            _renderer.SetPropertyBlock(props);
+        }
+       
         use = false;
-        _renderer.GetPropertyBlock(props);
-        props.SetFloat("on", 1.0f);
-        _renderer.SetPropertyBlock(props);
     }
     public void inRange() {
         use = true;
-        props.SetFloat("on", 1.0f);
     }
 
     
