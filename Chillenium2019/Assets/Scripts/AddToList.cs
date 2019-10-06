@@ -28,7 +28,8 @@ public class AddToList : MonoBehaviour
 
     void TimerStart() {
         //Set to spawn events every 5 seconds
-        lifeOf = new System.Timers.Timer(3 * 1000);
+        lifeOf.Stop();
+        lifeOf = new System.Timers.Timer(2 * 1000);
 
         lifeOf.Elapsed += OnTimedEvent;
         lifeOf.AutoReset = false;
