@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager i = null;
     public int currentSong = 0;
-
+    
     void Awake() {
         if (!i) {
             i = this;
@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     void First() {
         Players = new int[4];
     }
