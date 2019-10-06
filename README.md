@@ -24,4 +24,19 @@ We are a group of friends who love to code and work together to make fun or funn
 The name of the game is to stay on top of the work, you have to complete tasks given to you via a computer terminal in a timely fashion or the bands' show and will suffer. There are many interactable objects around the map, that the players must interact with at certain times to achieve behind the scenes musical success, these wil be discussed below. The interactable items are highlighted in white, when you come near them, they include:
 
 -The Terminal:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Terminal/TerminalActive.png)
-       To know what tasks need to be accomplished, a player must interact with the terminal. Interact with it often to stay up to date!
+       To know what tasks need to be accomplished, a player must interact (**Press A**) with the terminal. Interact with it often to stay up to date!
+
+-Fireworks:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/FireworkLauncher.png)
+       Interact (**press A**) to shoot works of fire
+ 
+-Smoke Machine:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/SmokeMachine.png)
+       Interact (**Press A**) to start and stop fogification
+       
+-Spotlights:[alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Spotlight.png)
+       There are two types of spotlights.
+              1. The big spotlight on the catwalk: when near, press a to attach, then left or right to rotate, and b to dettach
+              2. The small spotlights on the ground: press a to pick up and toggle on or off, b to drop
+              
+-Projector:[alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Projector.png)
+       Interact (**Press A**) to cycle through the stage backgrounds
+       
