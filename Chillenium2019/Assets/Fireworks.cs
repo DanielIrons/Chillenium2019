@@ -18,7 +18,7 @@ public class Fireworks : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         boom = false;
-        smoke = true;
+        smoke = false;
     }
 
     public void BlastStart() {
