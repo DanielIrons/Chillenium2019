@@ -25,18 +25,26 @@ The name of the game is to stay on top of the work, you have to complete tasks g
 
 -**The Terminal**:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Terminal/TerminalActive.png)
        To know what tasks need to be accomplished, a player must interact (**Press A**) with the terminal. Interact with it often to stay up to date!
-
+       Located on the right side of the ground
+       
 -**Fireworks**:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/FireworkLauncher.png)
        Interact (**press A**) to shoot works of fire
- 
+       Located on the bottom of the stage
+       
 -**Smoke Machine**:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/SmokeMachine.png)
        Interact (**Press A**) to start and stop fogification
+       Located on the right side of the stage
        
 -**Spotlights**:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Spotlight.png)
        There are two types of spotlights.
               1. The big spotlight on the catwalk: when near, **Press A** to attach, then **left or right** to rotate, and **B** to dettach
               2. The small spotlights on the ground: **Press A** to pick up and toggle on or off, **B** to drop
-              
+                     2a. Small spotlights need to be moved as a task, there are red and blue circles on the ground to indicate where they must be moved
+              Location: -Big Spotlight is up the ladder on the catwalk
+                        -Green Spotlight is on left
+                        -Pink Spotlight is on right
+                        
 -**Projector**:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Projector/Projector1.png)
        Interact (**Press A**) to cycle through the stage backgrounds
+       Located behind crowd on bottom of screen
        
