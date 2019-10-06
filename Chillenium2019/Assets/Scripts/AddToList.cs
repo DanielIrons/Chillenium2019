@@ -21,7 +21,7 @@ public class AddToList : MonoBehaviour
     }
 
     void Update() {
-        if (getNext || true) {
+        if (getNext) {
             if (Event_Script.moreJobs()) {
                 List<Event_Brief> toAdd = Event_Script.jobsBrief();
                 foreach (Transform child in content.transform) {
