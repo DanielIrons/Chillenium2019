@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7560b730e83b1e74c8cca1c4f151c609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireworkID: 0
+  FireOrSmoke: 1
 --- !u!198 &5401341969275552681
 ParticleSystem:
   m_ObjectHideFlags: 0

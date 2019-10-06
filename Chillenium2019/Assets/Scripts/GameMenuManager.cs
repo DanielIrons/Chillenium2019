@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -58,6 +59,21 @@ public class GameMenuManager : MonoBehaviour
 
     void Update()
     {
+        // chack to see if all players are ready
+        int readyCount = 0;
+        for (int i = 0; i < 4; i++) {
+            if (playerReady[i]) {
+                readyCount++;
+            }
+        }
+        if (readyCount == 4) {
+            GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+            for (int i = 0; i < 4; i++) {
+                gm.SetPlayerChar(i, playerCurrChar[i]);
+            }
+            SceneManager.LoadScene("GameScene");
+        }
+
         // check all controllers for input
         for (int i = 0; i < 4; i++) {
             // connect player
