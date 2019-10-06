@@ -11,6 +11,7 @@ public enum Job { L1Off, L1On, L2Off, L2On, L1P1, L1P2, L2P1, L2P2, MainLightL, 
 //The general Event Handler
 public class Event_Script : MonoBehaviour{
     public static int TimeSpawn;
+    public int difficulty = 10;
     public static List<Game_Event> eventList = new List<Game_Event>();
     private System.Timers.Timer spawnTimer;
 
@@ -51,6 +52,7 @@ public class Event_Script : MonoBehaviour{
     // Start is called before the first frame update
     void Start()
     {
+        TimeSpawn = difficulty;
         TimerStart();
     }
 
