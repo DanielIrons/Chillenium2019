@@ -23,3 +23,4 @@ We are a group of friends who love to code and work together to make fun or funn
 **How to Play**
 The name of the game is to stay on top of the work, you have to complete tasks given to you via a computer terminal in a timely fashion or the bands' show and will suffer. There are many interactable objects around the map, that the players must interact with at certain times to achieve behind the scenes musical success, these wil be discussed below. The interactable items are highlighted in white, when you come near them, they include:
 
+-The Terminal:![alt text](https://github.com/DanielIrons/Chillenium2019/blob/master/Art/Interactives/Terminal/TerminalActive.png)
