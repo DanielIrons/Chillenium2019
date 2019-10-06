@@ -103,12 +103,12 @@ public class Light_Toggle : MonoBehaviour {
 
         //Change the art asset
         //this.GetComponent<SpriteRenderer>().sprite = lightSprites[Convert.ToInt32(on)];
-        transform.GetChild(0).gameObject.SetActive(on);
+        transform.GetChild(0).gameObject.SetActive(!on);
     }
 
 
     //Setup to trigger if we're inside of an area where the light should be placed
-    void OnTriggerEnter2D(Collider2D col) {
+    void OnTriggerStay2D(Collider2D col) {
         LightPlant cur = col.gameObject.GetComponent<LightPlant>();
         if (cur == null) return;
 
