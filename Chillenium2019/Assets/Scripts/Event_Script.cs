@@ -18,14 +18,17 @@ public class Event_Script : MonoBehaviour{
     //Jobs that have gone over but haven't been done.
     public static int jobsDrain = 0;
 
+    private static bool newJob = false;
+
     //UI updating list to be returned
     public static List<Event_Brief> jobsBrief() {
         List<Event_Brief> toRet = new List<Event_Brief>();
 
         foreach (Game_Event g in eventList) {
+            UnityEngine.Debug.Log(g.getType());
             toRet.Add(new Event_Brief(g.getType(), g.timeRatio()));
         }
-
+        newJob = false;
         return toRet;
     }
     //Other scripts tell us when a job has been completed and we remove all jobs of that type.
@@ -63,10 +66,15 @@ public class Event_Script : MonoBehaviour{
         spawnTimer.Enabled = true;
     }
 
+    public static bool moreJobs() {
+        return newJob;
+    }
+
     private static void OnTimedEvent(object source, ElapsedEventArgs e) {
         //UnityEngine.Debug.Log("SPAWN: EVENT");
 
         jobsLeft++;
+        newJob = true;
         Event_Script.eventList.Add(new Game_Event());
     }
 }
@@ -120,11 +128,18 @@ public class Game_Event {
 
 // The type that the UI Script will be returned with information on what the unfinished jobs are.
 public class Event_Brief {
-    public int type;
-    public float ratio;
+    private int type;
+    private float ratio;
     
     public Event_Brief(int t, float r) {
-        t = type;
-        r = ratio;
+        type = t;
+        ratio = r;
+    }
+
+    public int getType() {
+        return type;
+    }
+    public float getRatio() {
+        return ratio;
     }
 }
