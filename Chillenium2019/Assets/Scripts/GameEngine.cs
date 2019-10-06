@@ -21,6 +21,8 @@ public class GameEngine : MonoBehaviour
     public float startTimer = 120;
     private float currTime;
     public TextMeshProUGUI timerText;
+
+    public int CurrentSong = 0;
     
     void Awake() {
         inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();

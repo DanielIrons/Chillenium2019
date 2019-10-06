@@ -25,6 +25,7 @@ public class GameMenuManager : MonoBehaviour
     private void Awake()
     {
         inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
+        GameObject.Find("MusicManager").GetComponent<MusicManager>().PlayTheme();
         playerConnected = new bool[4];
         for (int i = 0; i < 4; i++) {
             playerConnected[i] = false;

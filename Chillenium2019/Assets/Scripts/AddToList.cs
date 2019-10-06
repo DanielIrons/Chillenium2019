@@ -31,7 +31,65 @@ public class AddToList : MonoBehaviour
                     UnityEngine.Debug.Log(ev.getType());
                     GameObject cur = Instantiate(template);
                     cur.transform.parent = content.transform;
-                    cur.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = Enum.GetNames(typeof(Job))[ev.getType()];
+                    string message = "";
+                    switch (ev.getType()) {
+                        case 0:
+                            message = "Light 1: Off";
+                            break;
+                        case 1:
+                            message = "Light 1: On";
+                            break;
+                        case 2:
+                            message = "Light 2: Off";
+                            break;
+                        case 3:
+                            message = "Light 2: On";
+                            break;
+                        case 4:
+                            message = "Light 1: Red";
+                            break;
+                        case 5:
+                            message = "Light 1: Blue";
+                            break;
+                        case 6:
+                            message = "Light 2: Red";
+                            break;
+                        case 7:
+                            message = "Light 2: Blue";
+                            break;
+                        case 8:
+                            message = "Big Spotlight: Left";
+                            break;
+                        case 9:
+                            message = "Big Spotlight: Center";
+                            break;
+                        case 10:
+                            message = "Big Spotlight: Right";
+                            break;
+                        case 11:
+                            message = "Hit the Fireworks";
+                            break;
+                        case 12:
+                            message = "Fog Machine: Off";
+                            break;
+                        case 13:
+                            message = "Fog Machine: On";
+                            break;
+                        case 14:
+                            message = "Projector: COOL";
+                            break;
+                        case 15:
+                            message = "Projector: STORM";
+                            break;
+                        case 16:
+                            message = "Projector: FIRE";
+                            break;
+                        case 17:
+                            message = "Projector: RAINBOW";
+                            break;
+
+                    }
+                    cur.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = message;
                 }
             }
             getNext = !getNext;
