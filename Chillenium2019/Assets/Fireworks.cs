@@ -13,10 +13,12 @@ public class Fireworks : MonoBehaviour
     //Timer for how long fireworks go off for
     private System.Timers.Timer spawnTimer;
     public static bool boom;
+    public bool smoke;
 
     // Start is called before the first frame update
     void Start() {
         boom = false;
+        smoke = true;
     }
 
     public void BlastStart() {
@@ -27,9 +29,9 @@ public class Fireworks : MonoBehaviour
             spawnTimer.AutoReset = false;
             spawnTimer.Enabled = true;            
         }
+        boom = true;
         GetComponent<ParticleSystem>().Play();
-        if (boom && FireOrSmoke == 2) boom = false;
-        else boom = true;
+        smoke = !smoke;
     }
 
     private static void OnTimedEvent(object source, ElapsedEventArgs e) {
@@ -49,14 +51,17 @@ public class Fireworks : MonoBehaviour
             }
         }
         else {
-            if (GetComponent<ParticleSystem>().isPlaying) {
+            if (smoke) {
                 Event_Script.jobDone((int)Job.FogOn);
             }
-            if (!boom && GetComponent<ParticleSystem>().isPlaying) {
+            if(smoke && !GetComponent<ParticleSystem>().isPlaying) {
+                GetComponent<ParticleSystem>().Play();
+            }
+            if (!smoke && GetComponent<ParticleSystem>().isPlaying) {
                 GetComponent<ParticleSystem>().Stop();
 
             }
-            if (!boom) {
+            if (!smoke) {
                 Event_Script.jobDone((int)Job.FogOff);
             }
         }
