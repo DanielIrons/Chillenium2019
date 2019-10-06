@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             
             if(isActing && consist.GetComponent<Light_Toggle>()!=null){
                 consist.GetComponent<Light_Toggle>().warp(this.transform.position);
-                if (buttons[1] == true) {
+                if (buttons[0] == true) {
                     consist.GetComponent<Light_Toggle>().toggle();
                 }
             }
