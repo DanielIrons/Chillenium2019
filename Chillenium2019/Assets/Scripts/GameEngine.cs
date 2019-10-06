@@ -74,7 +74,7 @@ public class GameEngine : MonoBehaviour
                 Scene scene = SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);
             }
-            if (inputManager.GetR()) {
+            if (inputManager.GetM()) {
                 SceneManager.LoadScene(0);
             }
         } 
