@@ -23,4 +23,12 @@ public class InputManager : MonoBehaviour
    public bool GetStart(int num) {
        return Input.GetButtonUp("Sbutton_" + num);
    }
+
+    public bool GetR() {
+        return Input.GetKeyDown(KeyCode.R);
+    }
+
+    public bool GetM() {
+        return Input.GetKeyDown(KeyCode.M);
+    }
 }

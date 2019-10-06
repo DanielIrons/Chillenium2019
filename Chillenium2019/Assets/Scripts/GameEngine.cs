@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameEngine : MonoBehaviour
@@ -57,6 +58,13 @@ public class GameEngine : MonoBehaviour
             if (inputManager.GetStart(pausedPlayer)) {
                 Unpause();
                 Delay();
+            }
+            if (inputManager.GetR()) {
+                Scene scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
+            }
+            if (inputManager.GetR()) {
+                SceneManager.LoadScene(0);
             }
         } 
 
