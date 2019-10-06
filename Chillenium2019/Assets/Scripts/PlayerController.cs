@@ -8,7 +8,7 @@ public enum movement {
 
 public class PlayerController : MonoBehaviour
 {
-    public int playerNumber;
+    private int playerNumber;
     public float playerSpeed = 10; //speed player moves
     private Rigidbody2D rb;
     private InputManager inputManager;
@@ -87,5 +87,9 @@ public class PlayerController : MonoBehaviour
     void Flip(bool b) {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.flipX = b;
+    }
+
+    public void SetPlayerNum(int num) {
+        playerNumber = num;
     }
 }

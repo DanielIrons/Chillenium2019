@@ -11,9 +11,24 @@ public class GameManager : MonoBehaviour
         if (!i) {
             i = this;
             DontDestroyOnLoad(gameObject);
+            First();
         }
         else {
             Destroy(gameObject);
         }
+    }
+
+    void First() {
+        Players = new int[4];
+    }
+
+    private int[] Players;
+
+    public void SetPlayerChar(int controller, int character) {
+        Players[controller] = character;
+    }
+
+    public int GetPlayerChar(int num) {
+        return Players[num];
     }
 }
