@@ -59,7 +59,7 @@ public class Event_Script : MonoBehaviour{
 
     void TimerStart() {
         //Set to spawn events every 5 seconds
-        spawnTimer = new System.Timers.Timer(1 * 1000);
+        spawnTimer = new System.Timers.Timer(10 * 1000);
 
         spawnTimer.Elapsed += OnTimedEvent;
         spawnTimer.AutoReset = true;
@@ -73,9 +73,11 @@ public class Event_Script : MonoBehaviour{
     private static void OnTimedEvent(object source, ElapsedEventArgs e) {
         //UnityEngine.Debug.Log("SPAWN: EVENT");
 
-        jobsLeft++;
         newJob = true;
-        Event_Script.eventList.Add(new Game_Event());
+        for(int i = 0; i < 4; i++) {
+            Event_Script.eventList.Add(new Game_Event());
+            jobsLeft++;
+        }
     }
 }
 

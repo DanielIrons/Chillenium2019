@@ -28,7 +28,8 @@ public class Fireworks : MonoBehaviour
             spawnTimer.Enabled = true;            
         }
         GetComponent<ParticleSystem>().Play();
-        boom = true;
+        if (boom && FireOrSmoke == 2) boom = false;
+        else boom = true;
     }
 
     private static void OnTimedEvent(object source, ElapsedEventArgs e) {
