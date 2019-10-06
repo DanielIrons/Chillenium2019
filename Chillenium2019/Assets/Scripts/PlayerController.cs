@@ -56,6 +56,9 @@ public class PlayerController : MonoBehaviour
             
             if(isActing && consist.GetComponent<Light_Toggle>()!=null){
                 consist.GetComponent<Light_Toggle>().warp(this.transform.position);
+                if (buttons[1] == true) {
+                    consist.GetComponent<Light_Toggle>().toggle();
+                }
             }
         }
         if(buttons[1] == true){
@@ -132,6 +135,9 @@ public class PlayerController : MonoBehaviour
         if((cur.GetComponent<MainSpotlight>() != null ||  cur.GetComponent<Light_Toggle>() != null) && buttons[0]){
             isActing = true;
             consist = cur;
+        }
+        if((cur.GetComponent<Proj_Button>() != null && buttons[0])) {
+            cur.GetComponent<Proj_Button>().use();
         }
     }
 }
