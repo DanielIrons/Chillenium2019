@@ -7,7 +7,7 @@ using TMPro;
 public class GameEngine : MonoBehaviour
 {
     private InputManager inputManager;
-    private int pausedPlayer;
+    private int pausedPlayer = 1;
     private bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject EndMenu;
