@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager i = null;
+    public int currentSong = 0;
 
     void Awake() {
         if (!i) {
