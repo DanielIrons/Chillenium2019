@@ -102,7 +102,8 @@ public class Light_Toggle : MonoBehaviour {
         on = !on;
 
         //Change the art asset
-        this.GetComponent<SpriteRenderer>().sprite = lightSprites[Convert.ToInt32(on)];
+        //this.GetComponent<SpriteRenderer>().sprite = lightSprites[Convert.ToInt32(on)];
+        transform.GetChild(0).gameObject.SetActive(on);
     }
 
 
