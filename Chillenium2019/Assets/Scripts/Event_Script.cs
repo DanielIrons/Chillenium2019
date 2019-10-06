@@ -54,6 +54,10 @@ public class Event_Script : MonoBehaviour{
     {
         TimeSpawn = difficulty;
         TimerStart();
+        eventList = new List<Game_Event>();
+        jobsLeft = 0;
+        jobsDone = 0;
+        jobsDrain = 0;
     }
 
     // Update is called once per frame
