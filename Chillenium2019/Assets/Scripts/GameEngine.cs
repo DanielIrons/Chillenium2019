@@ -24,6 +24,7 @@ public class GameEngine : MonoBehaviour
     
     void Awake() {
         inputManager = GameObject.Find("InputManager").GetComponent<InputManager>();
+        GameObject.Find("MusicManager").GetComponent<MusicManager>().PlayCurrSong();
         currTime = startTimer;
         pauseMenu.SetActive(false);
         GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();

@@ -10,6 +10,7 @@ public enum Job { L1Off, L1On, L2Off, L2On, L1P1, L1P2, L2P1, L2P2, MainLightL, 
 
 //The general Event Handler
 public class Event_Script : MonoBehaviour{
+    public static int TimeSpawn;
     public static List<Game_Event> eventList = new List<Game_Event>();
     private System.Timers.Timer spawnTimer;
 
@@ -61,7 +62,7 @@ public class Event_Script : MonoBehaviour{
 
     void TimerStart() {
         //Set to spawn events every 5 seconds
-        spawnTimer = new System.Timers.Timer(10 * 1000);
+        spawnTimer = new System.Timers.Timer(TimeSpawn * (1000/(1+jobsDone/3)));
 
         spawnTimer.Elapsed += OnTimedEvent;
         spawnTimer.AutoReset = true;
@@ -94,7 +95,7 @@ public class Game_Event {
     public Game_Event() {
         event_type = rand.Next(Enum.GetNames(typeof(Job)).Length);
         switch (event_type) {
-            default: timeTotal = 10 * 1000;
+            default: timeTotal = Event_Script.TimeSpawn * (1000 / (1 + Event_Script.jobsDone / 3));
                 break;
         }
         TimerStart(timeTotal);
