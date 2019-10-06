@@ -17,6 +17,7 @@ public class Event_Script : MonoBehaviour{
     public static int jobsLeft = 0;
     //Jobs that have gone over but haven't been done.
     public static int jobsDrain = 0;
+    public static int jobsDone = 0;
 
     private static bool newJob = false;
 
@@ -41,6 +42,7 @@ public class Event_Script : MonoBehaviour{
                 //correct our positioning
                 i = Math.Max(0, i-1);
                 jobsLeft--;
+                jobsDone++;
                 UnityEngine.Debug.Log("Job Type: " + ((Job)event_type).ToString() + " Done");
             }
         }
